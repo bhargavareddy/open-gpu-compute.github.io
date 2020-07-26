@@ -123,3 +123,9 @@ $ sudo lshw -C display
        configuration: latency=0
        resources: iomemory:f0-ef iomemory:f0-ef memory:fe0000000-fefffffff memory:ff0000000-ff01fffff memory:40880000-408fffff
 ```
+
+Downloading Native AMD Drivers for display on Ubuntu 18.04
+
+```
+https://www.amd.com/en/support/graphics/radeon-rx-vega-series/radeon-rx-vega-series/radeon-rx-vega-64
+```
