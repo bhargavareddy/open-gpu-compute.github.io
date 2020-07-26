@@ -90,4 +90,36 @@ Call returned HSA_STATUS_ERROR_OUT_OF_RESOURCES: The runtime failed to allocate 
 This error may also occur when the core runtime library needs to spawn threads or create internal OS-specific events.
 ```
 
-Found an [open issue](https://github.com/RadeonOpenCompute/ROCm/issues/923) with the same problem.
+Found an [open issue](https://github.com/RadeonOpenCompute/ROCm/issues/923) with the same problem. Looks like AMD GPU is 'UNCLAIMED'
+
+
+```
+$ sudo lshw -C display
+```
+
+```
+  *-display
+       description: VGA compatible controller
+       product: Hyper-V virtual VGA
+       vendor: Microsoft Corporation
+       physical id: 8
+       bus info: pci@0000:00:08.0
+       version: 00
+       width: 32 bits
+       clock: 33MHz
+       capabilities: vga_controller bus_master rom
+       configuration: driver=hyperv_fb latency=0
+       resources: irq:11 memory:f8000000-fbffffff memory:c0000-dffff
+  *-display UNCLAIMED
+       description: VGA compatible controller
+       product: Vega 10 [Radeon Instinct MI25 MxGPU]
+       vendor: Advanced Micro Devices, Inc. [AMD/ATI]
+       physical id: 1
+       bus info: pci@c9e3:00:00.0
+       version: 00
+       width: 64 bits
+       clock: 33MHz
+       capabilities: pciexpress msi msix vga_controller cap_list
+       configuration: latency=0
+       resources: iomemory:f0-ef iomemory:f0-ef memory:fe0000000-fefffffff memory:ff0000000-ff01fffff memory:40880000-408fffff
+```
