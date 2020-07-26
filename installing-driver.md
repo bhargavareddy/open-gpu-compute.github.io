@@ -73,3 +73,15 @@ Setting up rocm-libs (3.5.0-30) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 Processing triggers for libc-bin (2.27-3ubuntu1.2) ..
 ```
+
+```
+azureuser@amdgpu:~$ groups
+azureuser adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev
+azureuser@amdgpu:~$ /opt/rocm/bin/rocminfo  
+ROCk module is NOT loaded, possibly no GPU devices                                                    
+Unable to open /dev/kfd read-write: No such file or directory
+azureuser is member of video group
+hsa api call failure at: /src/rocminfo/rocminfo.cc:1142
+Call returned HSA_STATUS_ERROR_OUT_OF_RESOURCES: The runtime failed to allocate the necessary resources. 
+This error may also occur when the core runtime library needs to spawn threads or create internal OS-sp
+ecific events.```
